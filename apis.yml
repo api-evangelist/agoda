@@ -1,23 +1,71 @@
 aid: agoda
+
 name: Agoda
-description: 'Agoda is a company surfaced via the API Evangelist harvest backlog (source: travel) and
-  added to the network as a stub for full-pipeline profiling.'
+
+description: 'Agoda is a global online travel agency offering hotel, flight, and vacation rental bookings. The platform provides a wide range of accommodations across more than 2 million properties worldwide, featuring free cancellation, price comparison, and localized support. Agoda serves travelers with a multilingual interface, various payment options, and a focus on delivering convenient, affordable travel experiences.'
+
 url: https://raw.githubusercontent.com/api-evangelist/agoda/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:travel
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-22 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-22'
+
 modified: '2026-09-22'
+
 tags:
 - Company
-apis: []
+- Travel
+- Booking
+- Hotel
+- Online
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Security
+  url: https://hackerone.com/agoda-public
+- type: SecurityTxt
+  url: well-known/agoda-security.txt
+- type: SecurityTxt
+  url: well-known/agoda-agoda-security.txt
+- type: WellKnown
+  url: well-known/agoda-well-known.yml
+- type: Vendors
+  url: vendors/agoda-vendors.yml
+- type: Documentation
+  url: https://developer.agoda.com/supply/docs
+- type: APIReference
+  url: https://developer.agoda.com/supply/reference
+- type: GettingStarted
+  url: https://developer.agoda.com/supply/docs/how-to-become-a-partner
+- type: Support
+  url: https://www.agoda.com/info/contact.html
+- type: Blog
+  url: https://www.agoda.com/blog
 - type: Website
   url: https://agoda.com/
+- type: VulnerabilityDisclosure
+  url: security/agoda-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/agoda-domain-security.yml
+- type: Website
+  url: https://agoda.com/
+
+apis: []
+x-enrichment:
+  date: '2026-09-22'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
