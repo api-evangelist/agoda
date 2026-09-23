@@ -1,0 +1,112 @@
+generated: '2026-09-22'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 6
+  own: 4
+  other_domain: 2
+  platform: 0
+  roles:
+  - api
+  - docs
+  - security
+  - support
+  - website
+hosts:
+- host: agoda.com
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  types:
+  - Website
+  serves: []
+  registrable_domain: agoda.com
+  role: website
+  relation: own
+- host: api.agoda.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: agoda.com
+  role: api
+  relation: own
+  last_probed: '2026-09-22'
+  probe_paths: 7
+  probe_verdict: nothing
+- host: api.hackerone.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: hackerone.com
+  role: api
+  relation: other-domain
+  last_probed: '2026-09-22'
+  probe_paths: 7
+  probe_verdict: nothing
+- host: developer.agoda.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Documentation
+  - APIReference
+  - GettingStarted
+  serves:
+  - docs
+  - cdn
+  - documentation
+  - html
+  vendor: cloudflare
+  registrable_domain: agoda.com
+  role: docs
+  relation: own
+  last_probed: '2026-09-22'
+  probe_paths: 4
+  probe_found:
+  - path: /docs
+    kind: html
+    bytes: 200000
+  probe_verdict: answers
+- host: hackerone.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Security
+  serves: []
+  registrable_domain: hackerone.com
+  role: security
+  relation: other-domain
+- host: www.agoda.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Support
+  - Blog
+  serves:
+  - cdn
+  vendor: akamai
+  registrable_domain: agoda.com
+  role: support
+  relation: own
+probed:
+  date: '2026-09-22'
+  hosts: 3
+  answers: 1
+  gated: 0
+  dead: 0

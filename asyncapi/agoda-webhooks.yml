@@ -1,0 +1,15 @@
+generated: '2026-09-22'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://developer.agoda.com/supply/docs/messaging-webhooks
+sources:
+- https://developer.agoda.com/supply/docs/messaging-webhooks
+description: Agoda sends a webhook notification when a new message is available for the recipient Channel Manager.
+events:
+- event: MESSAGING_API_NEW_MESSAGE
+  description: A new‑message notification is delivered to the configured HTTPS endpoint when an eligible message is available.
+delivery:
+  auth: 'OAuth 2.0 client credentials – Agoda obtains a token from the Channel Manager token endpoint and includes `Authorization: Bearer <token>`
+    on each POST.'
+  retries: At‑least‑once delivery; on network failure or any non‑2xx response Agoda retries the same payload with the same `metadata.uuid`.
+docs: https://developer.agoda.com/supply/docs/messaging-webhooks

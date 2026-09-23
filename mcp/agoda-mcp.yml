@@ -1,0 +1,80 @@
+generated: '2026-09-22'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/agoda-openapi-generated.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.hackerone.com, api.agoda.com, hackerone.com, developer.agoda.com;
+  verdict gated (https://api.hackerone.com/mcp answered 401: the edge authenticates before it routes, which proves nothing either way). Candidate
+  tools below are derived from the 13 operation(s) in the provider''s own OpenAPI (13 listed); they describe what a server WOULD expose, not one
+  that exists.'
+tools:
+- name: get_cm_codes_bed_types
+  operationId: get_cm_codes_bed_types
+  method: GET
+  path: /cm/codes/bed-types
+  description: Get Bed Types
+- name: get_cm_codes_benefits
+  operationId: get_cm_codes_benefits
+  method: GET
+  path: /cm/codes/benefits
+  description: Get Benefits
+- name: get_cm_codes_countries
+  operationId: get_cm_codes_countries
+  method: GET
+  path: /cm/codes/countries
+  description: Get Countries
+- name: get_cm_codes_currencies
+  operationId: get_cm_codes_currencies
+  method: GET
+  path: /cm/codes/currencies
+  description: Get Currencies
+- name: get_cm_codes_error_codes
+  operationId: get_cm_codes_error_codes
+  method: GET
+  path: /cm/codes/error-codes
+  description: Get Error Codes
+- name: get_cm_codes_fees
+  operationId: get_cm_codes_fees
+  method: GET
+  path: /cm/codes/fees
+  description: Get Fees
+- name: get_cm_codes_languages
+  operationId: get_cm_codes_languages
+  method: GET
+  path: /cm/codes/languages
+  description: Get Languages
+- name: get_cm_codes_views
+  operationId: get_cm_codes_views
+  method: GET
+  path: /cm/codes/views
+  description: Get Views
+- name: post_cm_hotel_contracts
+  operationId: post_cm_hotelContracts
+  method: POST
+  path: /cm/hotelContracts
+  description: Get Contract
+- name: post_cm_hotel_contracts_sign
+  operationId: post_cm_hotelContractsSign
+  method: POST
+  path: /cm/hotelContractsSign
+  description: Sign Contract
+- name: post_cm_hotelproducts
+  operationId: post_cm_hotelproducts
+  method: POST
+  path: /cm/hotelproducts
+  description: Build new or modify product mappings for properties which are authorized under your API credentials
+- name: post_cm_rateplans
+  operationId: post_cm_rateplans
+  method: POST
+  path: /cm/rateplans
+  description: Build new or modify rates for properties which are authorized under your API credentials
+- name: post_cm_rooms
+  operationId: post_cm_rooms
+  method: POST
+  path: /cm/rooms
+  description: Build new or modify rooms for properties which are authorized under your API credentials

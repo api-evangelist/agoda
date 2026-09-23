@@ -34,8 +34,20 @@ vendors:
   kin_score:
   - https_enforced
   - hsts
+- vendor: readme
+  name: ReadMe
+  area: documentation
+  host: developer.agoda.com
+  evidence: cname:readmessl.com
+  signal: docs-platform
+  confidence: high
+  kin_score:
+  - openapi_published
+  - changelog_present
+  - llms_txt
+  - api_explorer
 checked:
-- 'docs-platform: no-docs-host'
+- 'docs-platform: readme'
 - developer.agoda.com (Documentation)
 - developer.agoda.com (APIReference)
 - developer.agoda.com (GettingStarted)

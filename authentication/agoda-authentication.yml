@@ -1,0 +1,22 @@
+generated: '2026-09-22'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://developer.agoda.com/supply/docs/authentication-2025
+sources:
+- https://developer.agoda.com/supply/docs/authentication-2025
+- https://developer.agoda.com/supply/docs/getting-started
+- https://developer.agoda.com/supply/docs/setup-a-promotion-discount-with-different-nighttypes
+description: Authentication methods for Agoda Direct Supply APIs
+schemes:
+- type: oauth2
+  name: OAuth 2.0
+  evidence: 'To obtain an access token, you need to call the following URL endpoint: URL ENDPOINT: https://supply.agoda.com/token-based-authentication/exchange'
+  flows:
+  - client_credentials
+  token_url: https://supply.agoda.com/token-based-authentication/exchange
+  how_to_obtain: Generate a Client ID and Client Secret in the API access management page in YCS, then call the token endpoint with those credentials
+    to receive an access token.
+- type: apiKey
+  name: API Key
+  evidence: Both API Key authentication and Token-Based Authentication (OAuth 2.0) will be supported.
+docs: https://developer.agoda.com/supply/docs/authentication-2025

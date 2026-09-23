@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/agoda/main/json-schema/agoda-post-cm-hotelproducts-request-schema.json",
+  "title": "PostCmHotelproductsRequest",
+  "x-generated": "2026-09-22",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/agoda-openapi-generated.yml#/components/schemas/PostCmHotelproductsRequest",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "string",
+      "description": "HotelProductContent in OTA2017B format which need to be created"
+    }
+  },
+  "required": [
+    "body"
+  ]
+}

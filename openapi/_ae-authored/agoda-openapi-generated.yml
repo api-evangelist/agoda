@@ -1,0 +1,467 @@
+openapi: 3.1.0
+info:
+  title: Agoda API
+  version: '2026-09-22'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-22: 13 operation(s) read from 13 public documentation page(s) (each
+    operation names its page in x-source). This is not the provider''s published contract; Agoda has published no machine-readable contract that
+    the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 13
+    pages-with-code: 0
+    pages-read: 13
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-22'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.agoda.com/supply/reference/get-fees
+  - https://developer.agoda.com/supply/reference/get-views
+  - https://developer.agoda.com/supply/reference/get-benefits
+  - https://developer.agoda.com/supply/reference/get-contract
+  - https://developer.agoda.com/supply/reference/get-bed-types
+  - https://developer.agoda.com/supply/reference/get-countries
+  - https://developer.agoda.com/supply/reference/get-languages
+  - https://developer.agoda.com/supply/reference/sign-contract
+  - https://developer.agoda.com/supply/reference/get-currencies
+  - https://developer.agoda.com/supply/reference/managing-rates
+  - https://developer.agoda.com/supply/reference/managing-rooms
+  - https://developer.agoda.com/supply/reference/get-error-codes
+  - https://developer.agoda.com/supply/reference/managing-product
+paths:
+  /cm/codes/bed-types:
+    get:
+      operationId: get_cm_codes_bed_types
+      tags:
+      - Cm
+      summary: Get Bed Types
+      description: Get a list of supported bed types
+      x-source: https://developer.agoda.com/supply/reference/get-bed-types
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCmCodesBedTypesResponse'
+      x-evidence:
+        kind: documentation
+  /cm/codes/benefits:
+    get:
+      operationId: get_cm_codes_benefits
+      tags:
+      - Cm
+      summary: Get Benefits
+      description: Get a list of supported benefits
+      x-source: https://developer.agoda.com/supply/reference/get-benefits
+      responses:
+        '2000':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /cm/codes/countries:
+    get:
+      operationId: get_cm_codes_countries
+      tags:
+      - Cm
+      summary: Get Countries
+      description: Get a list of supported countries
+      x-source: https://developer.agoda.com/supply/reference/get-countries
+      responses:
+        '2000':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCmCodesCountriesResponse'
+      x-evidence:
+        kind: documentation
+  /cm/codes/currencies:
+    get:
+      operationId: get_cm_codes_currencies
+      tags:
+      - Cm
+      summary: Get Currencies
+      description: Get a list of supported currencies
+      x-source: https://developer.agoda.com/supply/reference/get-currencies
+      responses:
+        '2000':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCmCodesCurrenciesResponse'
+      x-evidence:
+        kind: documentation
+  /cm/codes/error-codes:
+    get:
+      operationId: get_cm_codes_error_codes
+      tags:
+      - Cm
+      summary: Get Error Codes
+      description: Get a list of all error codes
+      x-source: https://developer.agoda.com/supply/reference/get-error-codes
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCmCodesErrorCodesResponse'
+      x-evidence:
+        kind: documentation
+  /cm/codes/fees:
+    get:
+      operationId: get_cm_codes_fees
+      tags:
+      - Cm
+      summary: Get Fees
+      description: Get a list of supported fees
+      x-source: https://developer.agoda.com/supply/reference/get-fees
+      responses:
+        '2000':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCmCodesFeesResponse'
+      x-evidence:
+        kind: documentation
+  /cm/codes/languages:
+    get:
+      operationId: get_cm_codes_languages
+      tags:
+      - Cm
+      summary: Get Languages
+      description: Get a list of supported languages
+      x-source: https://developer.agoda.com/supply/reference/get-languages
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCmCodesLanguagesResponse'
+      x-evidence:
+        kind: documentation
+  /cm/codes/views:
+    get:
+      operationId: get_cm_codes_views
+      tags:
+      - Cm
+      summary: Get Views
+      description: Get a list of supported views
+      x-source: https://developer.agoda.com/supply/reference/get-views
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCmCodesViewsResponse'
+      x-evidence:
+        kind: documentation
+  /cm/hotelContracts:
+    post:
+      operationId: post_cm_hotelContracts
+      tags:
+      - Cm
+      summary: Get Contract
+      description: For independent properties, this allows you to retrieve contract status.
+      x-source: https://developer.agoda.com/supply/reference/get-contract
+      parameters:
+      - name: body
+        in: query
+        required: true
+        schema:
+          type: string
+        description: HotelContractInfos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCmHotelcontractsRequest'
+      responses:
+        '2000':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostCmHotelcontractsResponse'
+      x-evidence:
+        kind: documentation
+  /cm/hotelContractsSign:
+    post:
+      operationId: post_cm_hotelContractsSign
+      tags:
+      - Cm
+      summary: Sign Contract
+      description: For independent properties, this allows you to electronically sign your contract. Without this being done, your property will
+        not be visible on Agoda.com.
+      x-source: https://developer.agoda.com/supply/reference/sign-contract
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCmHotelcontractssignRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostCmHotelcontractssignResponse'
+      x-evidence:
+        kind: documentation
+  /cm/hotelproducts:
+    post:
+      operationId: post_cm_hotelproducts
+      tags:
+      - Cm
+      summary: Build new or modify product mappings for properties which are authorized under your API credentials
+      description: Build new or modify product mappings for properties which are authorized under your API credentials
+      x-source: https://developer.agoda.com/supply/reference/managing-product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCmHotelproductsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostCmHotelproductsResponse'
+      x-evidence:
+        kind: documentation
+  /cm/rateplans:
+    post:
+      operationId: post_cm_rateplans
+      tags:
+      - Cm
+      summary: Build new or modify rates for properties which are authorized under your API credentials
+      description: Build new or modify rates for properties which are authorized under your API credentials
+      x-source: https://developer.agoda.com/supply/reference/managing-rates
+      parameters:
+      - name: body
+        in: query
+        required: true
+        schema:
+          type: string
+        description: List of RatePlans in OTA2017B format which need to be created
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCmRateplansRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostCmRateplansResponse'
+      x-evidence:
+        kind: documentation
+  /cm/rooms:
+    post:
+      operationId: post_cm_rooms
+      tags:
+      - Cm
+      summary: Build new or modify rooms for properties which are authorized under your API credentials
+      description: Build new or modify rooms for properties which are authorized under your API credentials
+      x-source: https://developer.agoda.com/supply/reference/managing-rooms
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCmRoomsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostCmRoomsResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetCmCodesBedTypesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    GetCmCodesCountriesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    GetCmCodesCurrenciesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    GetCmCodesErrorCodesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    GetCmCodesFeesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    GetCmCodesLanguagesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    GetCmCodesViewsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    PostCmHotelcontractsRequest:
+      type: object
+      properties:
+        HotelContractInfos:
+          type: string
+      required:
+      - HotelContractInfos
+    PostCmHotelcontractsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The successful response with hotel contract information.
+        '400':
+          type: string
+          description: The request content was malformed
+        '401':
+          type: string
+          description: The supplier was unauthorized
+    PostCmHotelcontractssignRequest:
+      type: object
+      properties:
+        body:
+          type: string
+          description: HotelContractSigns
+      required:
+      - body
+    PostCmHotelcontractssignResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The successful response with hotel contract information.
+        '400':
+          type: string
+          description: The request content was malformed
+        '401':
+          type: string
+          description: The supplier was unauthorized
+    PostCmHotelproductsRequest:
+      type: object
+      properties:
+        body:
+          type: string
+          description: HotelProductContent in OTA2017B format which need to be created
+      required:
+      - body
+    PostCmHotelproductsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The request has been accepted for processing
+        '400':
+          type: string
+          description: The request content was malformed
+        '401':
+          type: string
+          description: The supplier was unauthorized
+    PostCmRateplansRequest:
+      type: object
+      properties:
+        body:
+          type: string
+      required:
+      - body
+    PostCmRateplansResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The request has been accepted for processing
+        '400':
+          type: string
+          description: The request content was malformed
+        '401':
+          type: string
+          description: The supplier was unauthorized
+    PostCmRoomsRequest:
+      type: object
+      properties:
+        body:
+          type: string
+          description: List of rooms in OTA2017B format which need to be created
+      required:
+      - body
+    PostCmRoomsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The request has been accepted for processing OTA_HotelInvNotifRS
+        '400':
+          type: string
+          description: The request content was malformed OTA_HotelInvNotifRS
+        '401':
+          type: string
+          description: The supplier was unauthorized OTA_HotelInvNotifRS
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: apiKey
+security:
+- apiKey: []
+tags:
+- name: Cm
