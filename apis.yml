@@ -11,7 +11,16 @@ x-tier-reason: enrichment pass 2026-09-22 (modular-v1; was harvest)
 specificationVersion: '0.20'
 created: '2026-09-22'
 modified: '2026-09-22'
+x-docs-platform: readme
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-09-24
 tags:
+- Company
+- Travel
+- Booking
+- Hotels
+- Online
+tags_raw:
 - Company
 - Travel
 - Booking
@@ -67,15 +76,15 @@ common:
 - type: Website
   url: https://agoda.com/
 apis:
-- aid: agoda:agoda-api
-  name: Agoda API
-  description: 'Agoda API as documented publicly: 13 operations. Contract generated from the documentation by API Evangelist (2026-09-22); not
-    the provider''s own document.'
+- aid: agoda:agoda-cm-api
+  name: Agoda Cm API
+  description: The Cm API from Agoda — 13 operation(s) for cm.
   humanURL: https://developer.agoda.com/supply/reference/get-fees
+  tags:
+  - Cm
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/agoda-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/agoda-cm-api-openapi.yml
   - type: JSONSchema
     url: json-schema/agoda-post-cm-rooms-response-schema.json
   - type: JSONSchema
