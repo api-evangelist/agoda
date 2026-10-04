@@ -296,24 +296,13 @@ paths:
         kind: documentation
 components:
   schemas:
-    GetCmCodesViewsResponse:
+    PostCmRateplansRequest:
       type: object
       properties:
-        '200':
+        body:
           type: string
-          description: Success
-        '500':
-          type: string
-          description: Internal server error
-    GetCmCodesCurrenciesResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: Success
-        '500':
-          type: string
-          description: Internal server error
+      required:
+      - body
     GetCmCodesCountriesResponse:
       type: object
       properties:
@@ -323,63 +312,6 @@ components:
         '500':
           type: string
           description: Internal server error
-    PostCmHotelproductsResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: The request has been accepted for processing
-        '400':
-          type: string
-          description: The request content was malformed
-        '401':
-          type: string
-          description: The supplier was unauthorized
-    PostCmRoomsResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: The request has been accepted for processing OTA_HotelInvNotifRS
-        '400':
-          type: string
-          description: The request content was malformed OTA_HotelInvNotifRS
-        '401':
-          type: string
-          description: The supplier was unauthorized OTA_HotelInvNotifRS
-    GetCmCodesFeesResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: Success
-        '500':
-          type: string
-          description: Internal server error
-    GetCmCodesBedTypesResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: Success
-        '500':
-          type: string
-          description: Internal server error
-    PostCmHotelcontractssignRequest:
-      type: object
-      properties:
-        body:
-          type: string
-          description: HotelContractSigns
-      required:
-      - body
-    PostCmHotelcontractsRequest:
-      type: object
-      properties:
-        HotelContractInfos:
-          type: string
-      required:
-      - HotelContractInfos
     PostCmHotelcontractsResponse:
       type: object
       properties:
@@ -392,27 +324,7 @@ components:
         '401':
           type: string
           description: The supplier was unauthorized
-    PostCmHotelcontractssignResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: The successful response with hotel contract information.
-        '400':
-          type: string
-          description: The request content was malformed
-        '401':
-          type: string
-          description: The supplier was unauthorized
-    PostCmRoomsRequest:
-      type: object
-      properties:
-        body:
-          type: string
-          description: List of rooms in OTA2017B format which need to be created
-      required:
-      - body
-    GetCmCodesLanguagesResponse:
+    GetCmCodesErrorCodesResponse:
       type: object
       properties:
         '200':
@@ -433,7 +345,15 @@ components:
         '401':
           type: string
           description: The supplier was unauthorized
-    GetCmCodesErrorCodesResponse:
+    PostCmHotelcontractssignRequest:
+      type: object
+      properties:
+        body:
+          type: string
+          description: HotelContractSigns
+      required:
+      - body
+    GetCmCodesCurrenciesResponse:
       type: object
       properties:
         '200':
@@ -442,13 +362,27 @@ components:
         '500':
           type: string
           description: Internal server error
-    PostCmRateplansRequest:
+    GetCmCodesFeesResponse:
       type: object
       properties:
-        body:
+        '200':
           type: string
-      required:
-      - body
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    PostCmRoomsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The request has been accepted for processing OTA_HotelInvNotifRS
+        '400':
+          type: string
+          description: The request content was malformed OTA_HotelInvNotifRS
+        '401':
+          type: string
+          description: The supplier was unauthorized OTA_HotelInvNotifRS
     PostCmHotelproductsRequest:
       type: object
       properties:
@@ -457,6 +391,72 @@ components:
           description: HotelProductContent in OTA2017B format which need to be created
       required:
       - body
+    PostCmHotelcontractssignResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The successful response with hotel contract information.
+        '400':
+          type: string
+          description: The request content was malformed
+        '401':
+          type: string
+          description: The supplier was unauthorized
+    GetCmCodesBedTypesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    GetCmCodesLanguagesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    PostCmHotelcontractsRequest:
+      type: object
+      properties:
+        HotelContractInfos:
+          type: string
+      required:
+      - HotelContractInfos
+    GetCmCodesViewsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    PostCmRoomsRequest:
+      type: object
+      properties:
+        body:
+          type: string
+          description: List of rooms in OTA2017B format which need to be created
+      required:
+      - body
+    PostCmHotelproductsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The request has been accepted for processing
+        '400':
+          type: string
+          description: The request content was malformed
+        '401':
+          type: string
+          description: The supplier was unauthorized
   securitySchemes:
     apiKey:
       type: apiKey
