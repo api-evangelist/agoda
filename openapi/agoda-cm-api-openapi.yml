@@ -296,13 +296,6 @@ paths:
         kind: documentation
 components:
   schemas:
-    PostCmRateplansRequest:
-      type: object
-      properties:
-        body:
-          type: string
-      required:
-      - body
     GetCmCodesCountriesResponse:
       type: object
       properties:
@@ -312,28 +305,15 @@ components:
         '500':
           type: string
           description: Internal server error
-    PostCmHotelcontractsResponse:
+    PostCmRoomsRequest:
       type: object
       properties:
-        '200':
+        body:
           type: string
-          description: The successful response with hotel contract information.
-        '400':
-          type: string
-          description: The request content was malformed
-        '401':
-          type: string
-          description: The supplier was unauthorized
-    GetCmCodesErrorCodesResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: Success
-        '500':
-          type: string
-          description: Internal server error
-    PostCmRateplansResponse:
+          description: List of rooms in OTA2017B format which need to be created
+      required:
+      - body
+    PostCmHotelproductsResponse:
       type: object
       properties:
         '200':
@@ -345,15 +325,19 @@ components:
         '401':
           type: string
           description: The supplier was unauthorized
-    PostCmHotelcontractssignRequest:
+    PostCmHotelcontractssignResponse:
       type: object
       properties:
-        body:
+        '200':
           type: string
-          description: HotelContractSigns
-      required:
-      - body
-    GetCmCodesCurrenciesResponse:
+          description: The successful response with hotel contract information.
+        '400':
+          type: string
+          description: The request content was malformed
+        '401':
+          type: string
+          description: The supplier was unauthorized
+    GetCmCodesLanguagesResponse:
       type: object
       properties:
         '200':
@@ -383,27 +367,7 @@ components:
         '401':
           type: string
           description: The supplier was unauthorized OTA_HotelInvNotifRS
-    PostCmHotelproductsRequest:
-      type: object
-      properties:
-        body:
-          type: string
-          description: HotelProductContent in OTA2017B format which need to be created
-      required:
-      - body
-    PostCmHotelcontractssignResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: The successful response with hotel contract information.
-        '400':
-          type: string
-          description: The request content was malformed
-        '401':
-          type: string
-          description: The supplier was unauthorized
-    GetCmCodesBedTypesResponse:
+    GetCmCodesViewsResponse:
       type: object
       properties:
         '200':
@@ -412,7 +376,7 @@ components:
         '500':
           type: string
           description: Internal server error
-    GetCmCodesLanguagesResponse:
+    GetCmCodesErrorCodesResponse:
       type: object
       properties:
         '200':
@@ -428,24 +392,42 @@ components:
           type: string
       required:
       - HotelContractInfos
-    GetCmCodesViewsResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: Success
-        '500':
-          type: string
-          description: Internal server error
-    PostCmRoomsRequest:
+    PostCmHotelproductsRequest:
       type: object
       properties:
         body:
           type: string
-          description: List of rooms in OTA2017B format which need to be created
+          description: HotelProductContent in OTA2017B format which need to be created
       required:
       - body
-    PostCmHotelproductsResponse:
+    PostCmHotelcontractsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The successful response with hotel contract information.
+        '400':
+          type: string
+          description: The request content was malformed
+        '401':
+          type: string
+          description: The supplier was unauthorized
+    PostCmRateplansRequest:
+      type: object
+      properties:
+        body:
+          type: string
+      required:
+      - body
+    PostCmHotelcontractssignRequest:
+      type: object
+      properties:
+        body:
+          type: string
+          description: HotelContractSigns
+      required:
+      - body
+    PostCmRateplansResponse:
       type: object
       properties:
         '200':
@@ -457,6 +439,24 @@ components:
         '401':
           type: string
           description: The supplier was unauthorized
+    GetCmCodesCurrenciesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
+    GetCmCodesBedTypesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Success
+        '500':
+          type: string
+          description: Internal server error
   securitySchemes:
     apiKey:
       type: apiKey
